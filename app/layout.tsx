@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import GoogleAnalytics from "@/app/GoogleAnalytics";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "./globals.css";
 import StoreProvider from "@/redux/storeProvider";
