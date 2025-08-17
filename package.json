@@ -19,6 +19,7 @@
     "@reduxjs/toolkit": "^2.0.1",
     "@splinetool/loader": "^1.9.28",
     "@splinetool/r3f-spline": "^1.0.2",
+    "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "fullpage.js": "^4.0.20",
