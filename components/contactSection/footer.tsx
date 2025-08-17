@@ -41,7 +41,7 @@ export function Footer({ className }: { className?: string }) {
           isMagnetic={true}
           links={[
             { href: links.email, text: "Email" },
-            { href: links.github, text: "Github" },
+            { href: links.x, text: "X" },
             { href: links.linkedin, text: "Linkedin" },
             { href: links.contact_2, text: "WhatsApp" },
           ]}

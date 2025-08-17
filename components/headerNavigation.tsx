@@ -85,7 +85,7 @@ export function HeaderNavigation() {
     },
     {
       name: "Contact",
-      href: links.contact,
+      href: links.email,
     },
   ];
   return (

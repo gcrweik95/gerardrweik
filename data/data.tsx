@@ -6,7 +6,7 @@ export const links = {
   contact_2: "https://wa.me/+33699195463",
   email: "mailto:gc.rweik95@gmail.com",
   resume: "/resume",
-  github: "https://github.com/gcrweik95",
+  x: "https://x.com/gerard_rweik",
   linkedin: "https://www.linkedin.com/in/gerard-rweik",
 };
 
