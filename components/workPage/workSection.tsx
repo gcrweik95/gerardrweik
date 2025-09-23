@@ -59,7 +59,7 @@ export function WorkSection({
             </div>
             <div className="page-num anime ">
               <div className="mask absolute left-0 top-0 -z-10 h-full w-full rounded-2xl bg-colorSecondaryDark"></div>
-              <p className="p-8 text-colorLight ">0{index + 1}</p>
+              <p className="p-8 text-colorLight ">{(index + 1) < 10 ? `0${index + 1}` : index + 1}</p>
             </div>
           </a>
           <div className="title w-[40%]">

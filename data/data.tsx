@@ -24,6 +24,26 @@ export const projectsData = [
   {
     title: (
       <>
+        Urban <br /> Home
+      </>
+    ),
+    description: "Shopify Store",
+    link: "https://urbanhome.live/",
+    imageLink: "/img/projects/13.avif",
+  },
+  {
+    title: (
+      <>
+        Ahla <br /> Shape
+      </>
+    ),
+    description: "Shopify Store",
+    link: "https://ahlashape.com/",
+    imageLink: "/img/projects/12.avif",
+  },
+  {
+    title: (
+      <>
         Nureva <br /> Relief
       </>
     ),
