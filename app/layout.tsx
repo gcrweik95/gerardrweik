@@ -113,6 +113,7 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"
         ></meta>
+        <meta name='impact-site-verification' value='0090c1ae-2267-467d-ad0f-4dc1aac68594' />
         <GoogleAnalytics />
         <SpeedInsights />
       </head>
