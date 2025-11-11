@@ -91,7 +91,7 @@ export const metadata: Metadata = {
   robots: "index, follow",
   verification: {
     other: {
-      'impact-site-verification': '0090:ciae-2267-467d-a00f-4dc1aac68694',
+      'impact-site-verification': '0090c1ae-2267-467d-ad0f-4dc1aac68594',
     },
   },
 };
