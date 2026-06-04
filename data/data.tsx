@@ -13,6 +13,46 @@ export const links = {
 export const projectsData = [
   {
     title: (
+        <>
+          The Rogue <br /> Aligner
+        </>
+    ),
+    description: "WooCommerce Store",
+    link: "https://roguealigner.com/",
+    imageLink: "/img/projects/17.avif",
+  },
+  {
+    title: (
+        <>
+          Duplexline
+        </>
+    ),
+    description: "Lead Capture Website",
+    link: "https://www.duplexline.com/",
+    imageLink: "/img/projects/16.avif",
+  },
+  {
+    title: (
+        <>
+          Stellar Insights <br /> Inc.
+        </>
+    ),
+    description: "Lead Capture Website",
+    link: "https://www.stellarinsightinc.com/",
+    imageLink: "/img/projects/15.avif",
+  },
+  {
+    title: (
+        <>
+          SamarJane
+        </>
+    ),
+    description: "Product Teaser Page",
+    link: "https://samarjane.com/",
+    imageLink: "/img/projects/14.avif",
+  },
+  {
+    title: (
       <>
         PhysYour <br /> Shop
       </>
@@ -70,17 +110,6 @@ export const projectsData = [
     description: "Shopify Store",
     link: "https://thecornerhub.com/",
     imageLink: "/img/projects/4.avif",
-  },
-
-  {
-    title: (
-      <>
-        Bisart <br /> Shop
-      </>
-    ),
-    description: "Shopify Store",
-    link: "https://bisart.fr/",
-    imageLink: "/img/projects/5.avif",
   },
   {
     title: (
