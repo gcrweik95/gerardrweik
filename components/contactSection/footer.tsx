@@ -1,9 +1,10 @@
 import { FooterGroup } from "@/components/contactSection/footerGroup";
-import { links } from "@/data/data";
 import { cn, getJoinedDate } from "@/lib/utils";
+import { useSiteSettings } from "@/components/siteSettingsProvider";
 import React, { useEffect, useRef, useState } from "react";
 export function Footer({ className }: { className?: string }) {
   const [currentTime, setCurrentTime] = useState("");
+  const links = useSiteSettings();
 
   useEffect(() => {
     const options: Intl.DateTimeFormatOptions[] = [
@@ -43,7 +44,7 @@ export function Footer({ className }: { className?: string }) {
             { href: links.email, text: "Email" },
             { href: links.x, text: "X" },
             { href: links.linkedin, text: "Linkedin" },
-            { href: links.contact_2, text: "WhatsApp" },
+            { href: links.whatsapp, text: "WhatsApp" },
           ]}
         />
       </div>

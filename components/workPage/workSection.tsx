@@ -3,6 +3,7 @@ import Magentic from "@/components/ui/magentic";
 import { Header } from "@/components/header";
 import { Bulge } from "../bulge";
 import { cn } from "@/lib/utils";
+import type { Project } from "@/sanity/lib/types";
 export function WorkSection({
   index,
   item,
@@ -10,12 +11,7 @@ export function WorkSection({
   length,
 }: {
   index: number;
-  item: {
-    title: React.JSX.Element;
-    description: string | React.JSX.Element;
-    link: string;
-    imageLink: string;
-  };
+  item: Project;
   color: "Dark" | "Light";
   length: number;
 }) {
@@ -48,9 +44,10 @@ export function WorkSection({
               index + 1
             } anime rounded-3xl ${(index+1) % 2 === 0 ? "!mr-auto !ml-0" : ""}`}
             target="_blank"
+            rel="noopener noreferrer"
             href={item.link}
             style={{
-              background: `url(${item.imageLink}) center center / contain no-repeat`,
+              background: `url(${item.image.asset.url}) center center / contain no-repeat`,
             }}
           >
             <div className="image__over">
@@ -64,7 +61,13 @@ export function WorkSection({
           </a>
           <div className="title w-[40%]">
             <h2 className="title__text js-letter anime mask font-bold tracking-tight">
-              {item.title}
+              {item.titleLine1}
+              {item.titleLine2 && (
+                <>
+                  <br />
+                  {item.titleLine2}
+                </>
+              )}
               <br />
             </h2>
             <div className="js-letter anime borderv">
@@ -80,6 +83,7 @@ export function WorkSection({
                 } bg-color${color} mask`}
                 href={item.link}
                 target="_blank"
+                rel="noopener noreferrer"
                 scrambleParams={{ text: "Show Me", chars: "-x" }}
               >
                 <p className="shapka">

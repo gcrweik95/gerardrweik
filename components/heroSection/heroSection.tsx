@@ -6,7 +6,7 @@ import { Bulge } from "@/components/bulge";
 import { ImageSequence } from "@/components/heroSection/imageSequence";
 
 export function HeroSection({}) {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   return (
     <section
       ref={sectionRef}

@@ -8,8 +8,10 @@ import Magentic from "./ui/magentic";
 import { isDesktop } from "@/lib/utils";
 import { link } from "fs";
 import { links } from "@/data/data";
+import { useSiteSettings } from "@/components/siteSettingsProvider";
 export function HeaderNavigation() {
   const { isMenuOpen, color } = useAppSelector((state) => state.menuReducer);
+  const siteSettings = useSiteSettings();
   const possibleTailwindClasses = [
     "text-colorDark",
     "text-colorLight",
@@ -88,7 +90,7 @@ export function HeaderNavigation() {
     },
     {
       name: "Contact",
-      href: links.email,
+      href: siteSettings.email,
     },
   ];
   return (

@@ -3,15 +3,11 @@
 import { getRandRgb } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
+import type { TechLogo } from "@/sanity/lib/types";
 
 type BgImageProps = {
   total: number;
-  item: {
-    id: number;
-    imgLink: string;
-    title: string;
-    subtitle: string;
-  };
+  item: TechLogo;
   i: number;
 };
 
@@ -28,9 +24,9 @@ export function BgImage({ total, item, i }: BgImageProps) {
       suppressHydrationWarning
     >
       <Image
-        src={item.imgLink}
+        src={item.logo.asset.url}
         fill={true}
-        alt=""
+        alt={item.logo.alt}
         className="h-full !w-auto min-w-full max-w-none object-cover"
       />
     </div>

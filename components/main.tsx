@@ -4,15 +4,22 @@ import { AboutSection } from "@/components/aboutSection/aboutSection";
 import { ResultsSection } from "@/components/resultsSection/resultsSection";
 import { ResultsStoriesSection } from "@/components/resultsSection/resultsStoriesSection";
 import { ContactSection } from "@/components/contactSection/contactSection";
+import type { Stat, Testimonial, TechLogo } from "@/sanity/lib/types";
 
-export function Main() {
+type MainProps = {
+  stats: Stat[];
+  testimonials: Testimonial[];
+  techLogos: TechLogo[];
+};
+
+export function Main({ stats, testimonials, techLogos }: MainProps) {
   return (
     <>
       <HeroSection />
       <AboutSection />
-      <ResultsSection />
-      <ResultsStoriesSection />
-      <ContactSection />
+      <ResultsSection stats={stats} testimonials={testimonials} />
+      <ResultsStoriesSection testimonials={testimonials} />
+      <ContactSection techLogos={techLogos} />
     </>
   );
 }

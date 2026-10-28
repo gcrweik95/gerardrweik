@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import { getRandValues } from "@/lib/utils";
-import { bgImagesData } from "@/data/data";
+import type { TechLogo } from "@/sanity/lib/types";
 
 function getRandDistrubutedTop(index: number, targets: any[]) {
   const mid = Math.floor(targets.length / 2);
@@ -33,8 +33,10 @@ function getRandDistrubutedTop(index: number, targets: any[]) {
 
 export const BgImagesContainer = ({
   bgImagesSharedRef,
+  techLogos,
 }: {
   bgImagesSharedRef: React.MutableRefObject<gsap.core.Tween | null>;
+  techLogos: TechLogo[];
 }) => {
   const bgImagesTween = useRef<gsap.core.Tween | null>(null);
   const GAP = 7;
@@ -90,12 +92,17 @@ export const BgImagesContainer = ({
       bgImagesTween.current?.kill();
       bgImagesSharedRef.current?.kill();
     };
-  });
+    // Mount-only: techLogos is fetched once server-side and passed down as a
+    // stable prop, and the GSAP tweens below target DOM nodes by className,
+    // so this must not re-run on every parent re-render (it previously had
+    // no dependency array at all, causing tweens to restart on every render).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="footer__img_wrapper bg-transparent-foreground  !absolute flex h-[100%] w-[100%] items-center justify-center overflow-hidden ">
-      {bgImagesData.map((item, i) => (
-        <BgImage key={item.id} total={bgImagesData.length} item={item} i={i} />
+      {techLogos.map((item, i) => (
+        <BgImage key={item.logo.asset._id} total={techLogos.length} item={item} i={i} />
       ))}
     </div>
   );

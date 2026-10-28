@@ -10,10 +10,12 @@ import { HeaderNavigation } from "@/components/headerNavigation";
 import Magentic from "@/components/ui/magentic";
 import { redirect } from "next/navigation";
 import { links } from "@/data/data";
+import { useSiteSettings } from "@/components/siteSettingsProvider";
 import { Footer } from "@/components/contactSection/footer";
 
 export default function WorkPage() {
   const [delay, setDelay] = useState(15);
+  const siteSettings = useSiteSettings();
   let timer: NodeJS.Timeout;
   useEffect(() => {
     if (delay !== 0) {
@@ -21,7 +23,7 @@ export default function WorkPage() {
         setDelay(delay - 1);
       }, 1000);
     } else {
-      redirect(links.linkedin);
+      redirect(siteSettings.linkedin);
     }
 
     return () => clearTimeout(timer);

@@ -5,10 +5,17 @@ import { BgImagesContainer } from "@/components/contactSection/bgImagesContainer
 import { useAppSelector } from "@/hooks/reduxHooks";
 import { Header } from "../header";
 import { Bulge } from "../bulge";
-import { links } from "@/data/data";
-export function ContactSection({}) {
+import { useSiteSettings } from "@/components/siteSettingsProvider";
+import type { TechLogo } from "@/sanity/lib/types";
+
+type ContactSectionProps = {
+  techLogos: TechLogo[];
+};
+
+export function ContactSection({ techLogos }: ContactSectionProps) {
   const { suscribe } = useAppSelector((state) => state.fullpageReducer.fourth);
   const bgImagesSharedRef = useRef<gsap.core.Tween | null>(null);
+  const links = useSiteSettings();
 
   return (
     <section className="section section__5 fourth lightGradient ">
@@ -33,7 +40,7 @@ export function ContactSection({}) {
           <span className="yellow__it">.</span>
         </span>
       </Magentic>
-      <BgImagesContainer bgImagesSharedRef={bgImagesSharedRef} />
+      <BgImagesContainer bgImagesSharedRef={bgImagesSharedRef} techLogos={techLogos} />
       <Footer />
     </section>
   );

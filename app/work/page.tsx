@@ -1,37 +1,19 @@
-"use client";
-import React from "react";
-import "../work.css";
-import "../header.css";
-import FullpageProviderWork from "@/components/fullpageProviderWork";
-import { Cursor } from "@/components/cursor";
-import { HeaderNavigation } from "@/components/headerNavigation";
-import { WorkSection } from "@/components/workPage/workSection";
-import { projectsData } from "@/data/data";
+import WorkPageClient from "./workPageClient";
+import { client } from "@/sanity/lib/client";
+import { PROJECTS_QUERY } from "@/sanity/lib/queries";
+import type { Project } from "@/sanity/lib/types";
+import { safeFetch } from "@/sanity/lib/safeFetch";
+import { FALLBACK_PROJECTS } from "@/sanity/lib/fallbackContent";
 
-export default function WorkPage() {
-  return (
-    <>
-      <Cursor />
-      <HeaderNavigation />
-      <FullpageProviderWork>
-        <div id="fullpage">
-          <div className="background">
-            PROJECTS
-            <br />
-            PROJECTS
-          </div>
-
-          {projectsData.map((item, index) => (
-            <WorkSection
-              key={index}
-              item={item}
-              index={index}
-              length={projectsData.length}
-              color={index % 2 !== 0 ? "Light" : "Dark"}
-            />
-          ))}
-        </div>
-      </FullpageProviderWork>
-    </>
+export default async function WorkPage() {
+  const projects = await safeFetch(
+    () =>
+      client.fetch<Project[]>(PROJECTS_QUERY, {}, {
+        next: { revalidate: 60, tags: ["project"] },
+      }),
+    FALLBACK_PROJECTS,
+    "projects",
   );
+
+  return <WorkPageClient projects={projects} />;
 }

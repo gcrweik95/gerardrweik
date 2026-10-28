@@ -44,3 +44,9 @@ SESSION_HANDOFF.md
 # raw client survey data (contains real names, kept out of the repo)
 survey-responses.csv
 survey-responses.csv:Zone.Identifier
+
+# AI assistant skill/reference docs (dev tooling, not app code)
+.agents/
+.claude/
+skills-lock.json
+

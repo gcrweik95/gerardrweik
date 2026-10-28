@@ -4,7 +4,7 @@ import gsap from "gsap";
 export function ImageSequence({
   sectionRef,
 }: {
-  sectionRef: React.RefObject<HTMLDivElement>;
+  sectionRef: React.RefObject<HTMLDivElement | null>;
 }) {
   useEffect(() => {
     const canvas = document.getElementById(

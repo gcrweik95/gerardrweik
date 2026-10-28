@@ -7,6 +7,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "./globals.css";
 import StoreProvider from "@/redux/storeProvider";
+import { SiteSettingsProvider } from "@/components/siteSettingsProvider";
+import { getSiteSettings } from "@/sanity/lib/getSiteSettings";
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 gsap.registerPlugin(CustomEase);
@@ -97,11 +99,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const settings = await getSiteSettings();
+
   return (
     <html lang="en">
       <head>
@@ -124,7 +128,11 @@ export default function RootLayout({
       </head>
 
       <body className={helvetica.className}>
-        <StoreProvider>{children}</StoreProvider>
+        <StoreProvider>
+          <SiteSettingsProvider settings={settings}>
+            {children}
+          </SiteSettingsProvider>
+        </StoreProvider>
       </body>
       <Script src="/gsap/ScrambleTextPlugin.min.js" />
     </html>

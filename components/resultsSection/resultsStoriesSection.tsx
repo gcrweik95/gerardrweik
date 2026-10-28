@@ -4,6 +4,11 @@ import { Bulge } from "@/components/bulge";
 import Magentic from "@/components/ui/magentic";
 import { ResultsStoriesStack } from "@/components/resultsSection/resultsStoriesStack";
 import { links } from "@/data/data";
+import type { Testimonial } from "@/sanity/lib/types";
+
+type ResultsStoriesSectionProps = {
+  testimonials: Testimonial[];
+};
 
 // Mobile-only fullpage.js slide. On desktop this section is hidden via
 // the `.mobileOnlySection` CSS class (see app/globals.css), so it never
@@ -12,7 +17,7 @@ import { links } from "@/data/data";
 // mobile it becomes a real, visible slide with its own explicit
 // data-anchor="third-next", independent of the positional anchors
 // array, holding the story cards that no longer fit inside #third.
-export function ResultsStoriesSection({}) {
+export function ResultsStoriesSection({ testimonials }: ResultsStoriesSectionProps) {
   return (
     <section
       data-anchor="third-next"
@@ -21,7 +26,7 @@ export function ResultsStoriesSection({}) {
       <Bulge type="Light" />
       <Header color="Light"></Header>
       <main className="flex h-full w-full max-w-maxWidth grow flex-col justify-center gap-[1.4em] text-[5.8vw] text-colorLight">
-        <ResultsStoriesStack />
+        <ResultsStoriesStack testimonials={testimonials} />
 
         <Magentic
           href={links.results}

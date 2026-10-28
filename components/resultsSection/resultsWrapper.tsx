@@ -3,9 +3,15 @@ import Magentic from "@/components/ui/magentic";
 import ResultsStatCard from "@/components/resultsSection/resultsStatCard";
 import ResultsStoryCard from "@/components/resultsSection/resultsStoryCard";
 import { ResultsStoriesMarquee } from "@/components/resultsSection/resultsStoriesMarquee";
-import { links, resultsStats, resultsStories } from "@/data/data";
+import { links } from "@/data/data";
+import type { Stat, Testimonial } from "@/sanity/lib/types";
 
-export function ResultsWrapper({}) {
+type ResultsWrapperProps = {
+  stats: Stat[];
+  testimonials: Testimonial[];
+};
+
+export function ResultsWrapper({ stats, testimonials }: ResultsWrapperProps) {
   return (
     <main className="flex h-full w-full max-w-maxWidth grow flex-col justify-center gap-[0.9em] text-[5.8vw] text-colorLight md:text-[clamp(20px,_1vw_+_14px,_32px)]">
       <div className="anime relative flex shrink-0 flex-col gap-[1em] md:flex-row md:items-stretch md:gap-[2em]">
@@ -62,7 +68,7 @@ export function ResultsWrapper({}) {
           section's only remaining content (no marquee) so they just flow
           in-place instead of sharing a flex-1 block with the marquee. */}
       <div className="anime grid shrink-0 grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
-        {resultsStats.map((stat, i) => (
+        {stats.map((stat, i) => (
           <ResultsStatCard key={i} value={stat.value} label={stat.label} />
         ))}
       </div>
@@ -73,7 +79,7 @@ export function ResultsWrapper({}) {
           cropped by this section's fixed 100dvh budget. */}
       <div className="hidden min-h-0 flex-1 flex-col justify-center md:flex">
         <ResultsStoriesMarquee direction="left" speed="slow" pauseOnHover>
-          {resultsStories.map((story, i) => (
+          {testimonials.map((story, i) => (
             <ResultsStoryCard
               key={i}
               tag={story.tag}
