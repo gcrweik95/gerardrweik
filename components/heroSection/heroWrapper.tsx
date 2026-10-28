@@ -12,6 +12,10 @@ export function HeroWrapper({}) {
         </div>
         <div className="animation__wrapper anime">
           <span className="animate__this animate__this1 left-0">
+            Digital Consultant<span className="yellow__it">.</span>
+            <br />
+          </span>
+          <span className="animate__this animate__this1 left-0">
             Fullstack Developer<span className="yellow__it">.</span>
             <br />
           </span>

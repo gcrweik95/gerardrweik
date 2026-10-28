@@ -26,15 +26,16 @@ export const metadata: Metadata = {
   // Title for the browser tab and search results.
   // The template is great for pages that extend this metadata.
   title: {
-    default: "Gérard RWEIK • Fullstack Developer",
+    default: "Gérard RWEIK • Fullstack Developer • Digital Consultant",
     template: "%s | Gérard RWEIK",
   },
   // A compelling description for search engine snippets and social media previews.
   description:
-    "Architecting seamless, high-performance e-commerce platforms. With 9 years of full-stack mastery, I transform business visions into intuitive, pixel-perfect user experiences.",
+    "Architecting seamless, high-performance e-commerce platforms. With 10+ years of full-stack mastery, I transform business visions into intuitive, pixel-perfect user experiences.",
   // Keywords to help search engines understand the content (less critical than they used to be).
   keywords: [
     "Gérard RWEIK",
+    "Digital Consultant",
     "Fullstack Developer",
     "Web Developer",
     "Frontend Developer",
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Gérard RWEIK • Fullstack Developer",
     description:
-      "Leveraging 9 years of expertise to build high-converting e-commerce platforms and intuitive user experiences.",
+      "Leveraging 10+ years of expertise to build high-converting e-commerce platforms and intuitive user experiences.",
     url: "https://www.gerardrweik.fr", // Replace with your actual domain
     siteName: "Gérard RWEIK's Portfolio",
     images: [
