@@ -15,24 +15,24 @@ export function HeroWrapper({}) {
             Digital Consultant<span className="yellow__it">.</span>
             <br />
           </span>
-          <span className="animate__this animate__this1 left-0">
+          <span className="animate__this animate__this2 left-0">
             Fullstack Developer<span className="yellow__it">.</span>
             <br />
           </span>
-          <span className="animate__this animate__this2 left-0">
+          <span className="animate__this animate__this3 left-0">
             Shopify Developer<span className="yellow__it">.</span>
             <br />
           </span>
-          <span className="animate__this animate__this3 left-0">
+          <span className="animate__this animate__this4 left-0">
             WordPress Developer<span className="yellow__it">.</span>
           </span>
-          <span className="animate__this animate__this4 left-0">
+          <span className="animate__this animate__this5 left-0">
             Next.js Developer<span className="yellow__it">.</span>
           </span>
-          <span className="animate__this animate__this5 left-0">
+          <span className="animate__this animate__this6 left-0">
             Symfony Developer<span className="yellow__it">.</span>
           </span>
-          <span className="animate__this animate__this6 left-0">
+          <span className="animate__this animate__this7 left-0">
             Laravel Developer<span className="yellow__it">.</span>
           </span>
           <span>&nbsp;</span>

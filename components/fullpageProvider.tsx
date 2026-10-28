@@ -170,6 +170,7 @@ const FullpageProvider = ({ children }: { children: React.ReactNode }) => {
       .set(".left .animate__this4", { y: "140%", opacity: 0 })
       .set(".left .animate__this5", { y: "140%", opacity: 0 })
       .set(".left .animate__this6", { y: "140%", opacity: 0 })
+      .set(".left .animate__this7", { y: "140%", opacity: 0 })
       .fromTo(
     ".left .animate__this1",
     {
@@ -312,6 +313,34 @@ const FullpageProvider = ({ children }: { children: React.ReactNode }) => {
   )
   .fromTo(
     ".left .animate__this6",
+    {
+      y: "0%",
+      opacity: 1,
+    },
+    {
+      y: "-140%",
+      opacity: 0,
+      delay: 1.7,
+      duration: 0.9,
+      ease,
+    },
+  )
+  .fromTo(
+    ".left .animate__this7",
+    {
+      y: "140%",
+      opacity: 0,
+    },
+    {
+      y: "0%",
+      opacity: 1,
+      duration: 0.9,
+      ease,
+    },
+    "-=0.9",
+  )
+  .fromTo(
+    ".left .animate__this7",
     {
       y: "0%",
       opacity: 1,
