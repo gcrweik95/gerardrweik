@@ -13,6 +13,14 @@ const initialState = {
     suscribe: 0,
     direction: "",
   },
+  // Mobile-only extra slide inserted after #third (see
+  // components/resultsSection/resultsStoriesSection.tsx). Needs its own
+  // entry here since fullpage.js's onLeave dispatches this anchor name
+  // whenever it becomes the active/destination slide on mobile.
+  "third-next": {
+    suscribe: 0,
+    direction: "",
+  },
   fourth: {
     suscribe: 0,
     direction: "",
@@ -33,7 +41,7 @@ const FullpageSlice = createSlice({
 
       return {
         ...state,
-        [anchor]: { suscribe: state[anchor].suscribe + 1, direction },
+        [anchor]: { suscribe: (state[anchor]?.suscribe ?? 0) + 1, direction },
       };
     },
   },

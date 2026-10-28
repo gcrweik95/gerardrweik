@@ -34,3 +34,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE
+.idea/
+
+# internal working notes
+SESSION_HANDOFF.md
+
+# raw client survey data (contains real names, kept out of the repo)
+survey-responses.csv
+survey-responses.csv:Zone.Identifier

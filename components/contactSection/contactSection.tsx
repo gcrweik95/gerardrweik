@@ -7,13 +7,13 @@ import { Header } from "../header";
 import { Bulge } from "../bulge";
 import { links } from "@/data/data";
 export function ContactSection({}) {
-  const { suscribe } = useAppSelector((state) => state.fullpageReducer.third);
+  const { suscribe } = useAppSelector((state) => state.fullpageReducer.fourth);
   const bgImagesSharedRef = useRef<gsap.core.Tween | null>(null);
 
   return (
-    <section className="section section__5 third darkGradient ">
-      <Bulge type="Light" />
-      <Header color="Light"></Header>
+    <section className="section section__5 fourth lightGradient ">
+      <Bulge type="Dark" />
+      <Header color="Dark"></Header>
 
       <Magentic
         href={links.email}

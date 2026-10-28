@@ -153,19 +153,17 @@ input:-webkit-autofill:active {
   mask-image: var(--mask);
 }
 
-@media screen and (min-width: 645px) {
-  .sliderMask {
-    --mask: linear-gradient(
-      90deg,
-      hsla(0, 0%, 100%, 0.5) 0%,
-      hsl(0, 0%, 100%) 6%,
-      hsl(0, 0%, 100%) 85%,
-      hsla(0, 0%, 100%, 0.5) 100%
-    );
+.sliderMask {
+  --mask: linear-gradient(
+    90deg,
+    hsla(0, 0%, 100%, 0) 0%,
+    hsl(0, 0%, 100%) 6%,
+    hsl(0, 0%, 100%) 85%,
+    hsla(0, 0%, 100%, 0) 100%
+  );
 
-    -webkit-mask-image: var(--mask);
-    mask-image: var(--mask);
-  }
+  -webkit-mask-image: var(--mask);
+  mask-image: var(--mask);
 }
 
 .lightGradient {
@@ -231,6 +229,20 @@ input:-webkit-autofill:active {
   min-height: 100dvh !important;
   position: relative !important;
   isolation: isolate !important;
+}
+
+/* Mobile-only extra fullpage.js slide (e.g. #third-next): hidden on
+   desktop so fullpage.js's visible-section count/positional anchors
+   stay exactly as they are today; shown as a normal flex section only
+   below the md breakpoint. */
+.mobileOnlySection {
+  display: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  .mobileOnlySection {
+    display: flex !important;
+  }
 }
 
 .fp-overflow {
